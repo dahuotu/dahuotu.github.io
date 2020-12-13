@@ -196,6 +196,32 @@ a {
 	margin: 10px 10px 0 10px;
 }
 
+.rt .about {
+	width: auto;
+	padding: 20px 15px;
+	background: #fff;
+	margin: 10px;
+}
+
+.rt .about .title {
+	font-size: 16px;
+	height: 16px;
+	line-height: 12px;
+	color: #282828;
+	width: 120px;
+	text-align: left;
+	border-left: 3px solid #282828;
+	padding-left: 5px;
+}
+
+.rt .about .desc {
+	height: auto;
+	font-size: 16px;
+	color: #282828;
+	margin: 10px 0;
+	padding: 10px;
+}
+
 .rt .list {
 	width: 100%;
 	margin-top: 10px;
