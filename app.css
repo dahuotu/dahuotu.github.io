@@ -46,10 +46,6 @@ a {
 	color: #d1d1d1;
 }
 
-.table .gn {
-	color: #08a08a;
-}
-
 .barlist {
 	display: flex;
 	width: 58%;
@@ -254,7 +250,7 @@ a {
 }
 
 .rt .list .infos .icon {
-	background: linear-gradient(0deg, #282828 0%, #000 100%);
+	background: linear-gradient(45deg, #282828 0%, #000 100%);
 	height: 100px;
 	justify-content: center;
 	display: flex;
@@ -267,6 +263,17 @@ a {
 	width: 80px;
 	height: 80px;
 	border-radius: 5px;
+}
+
+.rt .list .infos .icon .ft {
+	background: linear-gradient(-45deg, #000 0%, #282828 100%);
+	width: 80px;
+	height: 80px;
+	border-radius: 5px;
+	font-size: 20px;
+	text-align: center;
+	color: #c6c6c6;
+	line-height: 80px;
 }
 
 .rt .list .infos .name {
@@ -334,6 +341,17 @@ a {
 	align-items: center;
 	display: flex;
 	padding-top: 100px;
+}
+
+.pg .hd .box .li .ico .ft {
+	background: linear-gradient(-45deg, #000 0%, #282828 100%);
+	border-radius: 5px;
+	font-size: 32px;
+	text-align: center;
+	color: #c6c6c6;
+	line-height: 158px;
+	width: 158px;
+	height: 158px;
 }
 
 .pg .hd .box .li .name {
@@ -487,13 +505,29 @@ a {
 	color: #282828;
 	margin: 10px 0;
 	background: #fff;
-	padding: 10px;
+	padding: 10px 20px;
+}
+.pg .cd .box .desc .imgview{
+	display: flex;
+	width: 100%;
+	overflow-y: auto;
+}
+.pg .cd .box .desc .imgview img{
+	border: 1px solid #282828;
+	margin: 5px;
+	border-radius: 4px;
+	height: 300px;
 }
 
 .pg .cd .box .desc .h5 {
 	color: #282828;
 	font-size: 14px;
 	padding: 5px 0;
+}
+
+.pg .cd .box .desc .time {
+	font-weight: 500;
+	padding-top: 10px;
 }
 
 .pg .cd .box .desc a {
@@ -518,8 +552,9 @@ a {
 }
 
 .pg .cd .box .desc .log {
-	list-style: decimal;
-	padding: 0 20px;
+	list-style: inside;
+	padding: 0;
+	margin: 5px 0 10px 0;
 }
 
 .pg .fd {
