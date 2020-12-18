@@ -294,10 +294,16 @@ a {
 }
 
 .rt .list .infos .desc {
-	height: 80px;
+	height: auto;
+	min-height: 80px;
 	padding: 0 5px 5px 5px;
 	font-size: 14px;
 	color: #999;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	/*省略行数*/
+	-webkit-line-clamp: 3;
+	overflow: hidden;
 }
 
 .rt .list .infos .down {
@@ -507,12 +513,14 @@ a {
 	background: #fff;
 	padding: 10px 20px;
 }
-.pg .cd .box .desc .imgview{
+
+.pg .cd .box .desc .imgview {
 	display: flex;
 	width: 100%;
 	overflow-y: auto;
 }
-.pg .cd .box .desc .imgview img{
+
+.pg .cd .box .desc .imgview img {
 	border: 1px solid #282828;
 	margin: 5px;
 	border-radius: 4px;
