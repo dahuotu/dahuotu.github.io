@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta content="dahuotu" name="author" />
+		<title>VIP电影免费看</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<script type="text/javascript" src="js/flexible.js"></script>
+		<style type="text/css">
+			.body,
+			.head {
+				background: #333333;
+			}
+			
+			.search {
+				width: 90%;
+				margin: 0 auto;
+				display: flex;
+				margin-top: 0.2rem;
+			}
+			
+			.input {
+				height: 0.8rem;
+				width: 65%;
+				border: 0.05rem solid #fff;
+				font-size: 0.36rem;
+				border-radius: 0.5rem 0 0 0.5rem;
+				text-indent: 0.1rem;
+			}
+			
+			.input:focus,
+			.button:focus {
+				border: 0.05rem solid #3498db;
+			}
+			
+			.button {
+				width: 35%;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				border: none;
+				border-radius: 0 0.5rem 0.5rem 0;
+				background-color: #ff6651;
+				color: #fff;
+				opacity: 0.9;
+				font-size: 0.36rem;
+			}
+			
+			.enbutton {
+				width: 35%;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				border: none;
+				border-radius: 0 0.5rem 0.5rem 0;
+				background-color: #FAFAFA;
+				color: #fff;
+				opacity: 0.9;
+				font-size: 0.36rem;
+			}
+			
+			#con {
+				width: 90%;
+				margin: 0.15rem auto;
+				padding: 0.02rem;
+				-moz-column-gap: 0.02rem;
+				-moz-column-rule: 0px solid #ff0000;
+				-webkit-column-gap: 0.02rem;
+				-webkit-column-rule: 0px solid #ff0000;
+				-o-column-gap: 0.02rem;
+				-o-column-rule: 0px solid #ff0000;
+			}
+			
+			#con p {
+				font-size: 0.24rem;
+				color: #666;
+				line-height: 0.42rem;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				-o-text-overflow: ellipsis;
+				-moz-text-overflow: ellipsis;
+				-webkit-text-overflow: ellipsis;
+			}
+			
+			#con p a {
+				text-decoration: none;
+				color: #999;
+			}
+			
+			#con .no {
+				width: 50%;
+				margin: 0 auto;
+				text-align: center;
+				margin-top: 2rem;
+				font-size: 0.42rem;
+			}
+			
+			#con .pic:focus {
+				box-shadow: 2px 2px 6px #3498db;
+			}
+			
+			#con .pic {
+				width: 25%;
+				min-height: 1rem;
+				box-shadow: 2px 2px 6px #b5b5b5;
+				padding: 0.15rem;
+				margin: 0.1rem;
+				display: inline-block;
+			}
+			
+			#con .pic .img {
+				height: 2.2rem;
+				background: #fff;
+				overflow: hidden;
+			}
+			
+			#con .pic p {
+				font-size: 0.28rem;
+				margin-top: 0.2rem;
+			}
+			
+			@media only screen and (min-width: 1024px) {
+				#con .pic {
+					width: 14.4%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 1.8rem;
+					overflow: hidden;
+					background: #fff;
+				}
+				#con .pic p {
+					font-size: 0.28rem;
+					margin-top: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 1280px) {
+				#con .pic {
+					width: 12.2%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 1.8rem;
+					overflow: hidden;
+					background: #fff;
+				}
+				#con .pic p {
+					font-size: 0.28rem;
+					margin-top: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 1360px) {
+				#con .pic {
+					width: 12.5%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 2.2rem;
+					overflow: hidden;
+					background: #fff;
+				}
+				#con .pic p {
+					font-size: 0.28rem;
+					margin-top: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 1440px) {
+				#con .pic {
+					width: 16%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 3rem;
+					background: #fff;
+					overflow: hidden;
+				}
+				#con .pic p {
+					font-size: 0.16rem;
+					margin-top: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 1920px) {
+				#con .pic {
+					width: 13.6%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 3.6rem;
+					overflow: hidden;
+					background: #fff;
+				}
+				#con .pic p {
+					font-size: 0.18rem;
+					margin-top: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 2880px) {
+				#con .pic {
+					width: 8%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 3rem;
+					overflow: hidden;
+					background: #fff;
+				}
+				#con .pic p {
+					font-size: 0.18rem;
+					margin-top: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 3840px) {
+				#con .pic {
+					width: 6.8%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 3.3rem;
+					overflow: hidden;
+					background: #fff;
+				}
+				#con .pic p {
+					font-size: 0.24rem;
+					margin-top: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 4096px) {
+				#con .pic {
+					width: 6.3%;
+					min-height: 1rem;
+					box-shadow: 2px 2px 6px #b5b5b5;
+					padding: 0.15rem;
+					margin: 0.1rem;
+					display: inline-block;
+				}
+				#con .pic .img {
+					height: 3.3rem;
+					overflow: hidden;
+					background: #fff;
+				}
+				#con .pic p {
+					font-size: 0.28rem;
+					margin-top: 0.1rem;
+				}
+			}
+		</style>
+	</head>
+
+	<body class="body">
+		<div id="appform" v-cloak="">
+			<header class="head">
+				<div class="search">
+					<input class="input" type="search" value="" tabindex="1" placeholder="输入电影名称即可免费观看" v-model="searchVal" />
+					<input class="button" type="button" value="搜索" tabindex="2" @click="postSearch" />
+				</div>
+			</header>
+			<div style="height: 1rem;"></div>
+			<div id="con">
+				<div :class="searchState">
+					<span>尚未搜索到您需要的影视资源</span>
+				</div>
+				<template v-for="(item,index) in searchList">
+					<div :key="index" :tabindex="index+3" class="pic" @click="postSearchList(index,item.href)">
+						<div class="img">
+							<img class="img-responsive" :src="item.src" />
+						</div>
+						<p v-html="item.title"></p>
+					</div>
+				</template>
+			</div>
+		</div>
+		</div>
+	</body>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-resource.min.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#appform',
+			data: {
+				//baseUrl: "http://192.168.1.102/",
+				baseUrl: "https://api.dahuotu.com/",
+				searchVal: "",
+				searchState: "no hide",
+				searchList: [],
+			},
+			methods: {
+				postSearch: function() {
+					//搜索电影
+					if(app.searchVal.length > 0) {
+						this.$http.get(app.baseUrl + "api.aspx?act=dianying&val=" + app.searchVal).then(function(res) {
+							//console.log(res.body.data);
+							if(res.body.data.length > 0) {
+								app.searchList = res.body.data;
+								app.searchState = "no hide";
+							} else {
+								app.searchState = "no";
+							}
+
+						}, function() {
+							//console.log('请求失败处理');
+							app.searchState = "no";
+						});
+					}
+				},
+				postSearchList: function(index, href) {
+					//搜索集数
+					location.href = 'moivePlayer.html?hf=' + href;
+				},
+			}
+		});
+	</script>
+
+</html>

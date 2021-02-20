@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+*:not(input, textarea) {
+	-webkit-touch-callout: inherit;
+	-webkit-user-select: auto;
+}
+
+body {
+	width: 100%;
+	font-family: Hiragino Sans GB, Arial, Helvetica, "微软雅黑", sans-serif;
+	font-size: 14px;
+	color: #878787;
+	-webkit-touch-callout: inherit;
+	-webkit-user-select: auto;
+	background-color: #fff;
+}
+
+a {
+	color: #878787;
+	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+dt,
+dd {
+	display: inline-block;
+}
+
+textarea,
+input {
+	resize: none;
+	outline: none;
+}
+
+textarea {
+	resize: none;
+	-webkit-appearance: none;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+em {
+	font-style: normal;
+}
+
+button,
+select,
+textarea,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+header {
+	position: fixed;
+	height: 1rem;
+	line-height: 1rem;
+	left: 0;
+	right: 0;
+	top: 0;
+	text-align: center;
+	font-size: 0.32rem;
+	background: #fff;
+	color: #333;
+	width: 100%;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+header .back {
+	background: transparent url('../bc_img/icon-scroll-back.png') no-repeat;
+	width: 1rem;
+	height: 1rem;
+	background-size: 60%;
+	position: absolute;
+	margin-left: 0.15rem;
+	margin-top: 0.2rem;
+}

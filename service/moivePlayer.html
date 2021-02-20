@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no" />
+		<meta name="screen-orientation" content="portrait">
+		<meta name="full-screen" content="yes">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="x5-fullscreen" content="true">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta content="dahuotu" name="author" />
+		<title>VIP电影免费看</title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/video.min.css" />
+		<script type="text/javascript" src="js/flexible.js"></script>
+		<style type="text/css">
+			.body,
+			.head {
+				background: #333333;
+			}
+			
+			.search {
+				width: 90%;
+				margin: 0 auto;
+				display: flex;
+				margin-top: 0.2rem;
+			}
+			
+			.button {
+				width: 90%;
+				height: 0.8rem;
+				line-height: 0.8rem;
+				border: none;
+				border-radius: 0.5rem;
+				background-color: #ff6651;
+				color: #fff;
+				opacity: 0.9;
+				font-size: 0.36rem;
+			}
+			
+			.player {
+				width: 90%;
+				margin: 0 auto;
+			}
+			
+			.list {
+				width: 90%;
+				margin: 0 auto;
+			}
+			
+			.list ul {
+				display: inline-block;
+				margin: 0 auto;
+				width: auto;
+				margin-left: 0.15rem;
+			}
+			
+			.list ul li {
+				width: 2rem;
+				height: 0.6rem;
+				border: 0.02rem solid #878787;
+				border-radius: 0.04rem;
+				text-align: center;
+				vertical-align: middle;
+				line-height: 0.6rem;
+				float: left;
+				margin-right: 0.15rem;
+				margin-bottom: 0.15rem;
+				font-size: 0.28rem;
+				cursor: pointer;
+			}
+			
+			.list ul li:focus {
+				border: 0.02rem solid #878787;
+				background: #878787;
+				color: #fff;
+			}
+			
+			@media only screen and (min-width: 240px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.1rem;
+				}
+			}
+			
+			@media only screen and (min-width: 600px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.2rem;
+				}
+			}
+			
+			@media only screen and (min-width: 800px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.12rem;
+				}
+				.list ul li {
+					width: 1.58rem;
+					height: 0.6rem;
+					border: 0.02rem solid #878787;
+					border-radius: 0.04rem;
+					text-align: center;
+					vertical-align: middle;
+					line-height: 0.6rem;
+					float: left;
+					margin-right: 0.15rem;
+					margin-bottom: 0.15rem;
+					font-size: 0.28rem;
+					cursor: pointer;
+				}
+			}
+			
+			@media only screen and (min-width: 834px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.12rem;
+				}
+				.list ul li {
+					width: 2.26rem;
+					height: 0.6rem;
+					border: 0.02rem solid #878787;
+					border-radius: 0.04rem;
+					text-align: center;
+					vertical-align: middle;
+					line-height: 0.6rem;
+					float: left;
+					margin-right: 0.15rem;
+					margin-bottom: 0.15rem;
+					font-size: 0.28rem;
+					cursor: pointer;
+				}
+			}
+			
+			@media only screen and (min-width: 1024px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.15rem;
+				}
+				.list ul li {
+					width: 1.1rem;
+					height: 0.6rem;
+					border: 0.02rem solid #878787;
+					border-radius: 0.04rem;
+					text-align: center;
+					vertical-align: middle;
+					line-height: 0.6rem;
+					float: left;
+					margin-right: 0.15rem;
+					margin-bottom: 0.15rem;
+					font-size: 0.28rem;
+					cursor: pointer;
+				}
+			}
+			
+			@media only screen and (min-width: 1280px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.15rem;
+				}
+				.list ul li {
+					width: 1.7rem;
+					height: 0.6rem;
+					border: 0.02rem solid #878787;
+					border-radius: 0.04rem;
+					text-align: center;
+					vertical-align: middle;
+					line-height: 0.6rem;
+					float: left;
+					margin-right: 0.15rem;
+					margin-bottom: 0.15rem;
+					font-size: 0.28rem;
+					cursor: pointer;
+				}
+			}
+			
+			@media only screen and (min-width: 1360px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.15rem;
+				}
+				.list ul li {
+					width: 1.8rem;
+					height: 0.6rem;
+					border: 0.02rem solid #878787;
+					border-radius: 0.04rem;
+					text-align: center;
+					vertical-align: middle;
+					line-height: 0.6rem;
+					float: left;
+					margin-right: 0.15rem;
+					margin-bottom: 0.15rem;
+					font-size: 0.28rem;
+					cursor: pointer;
+				}
+			}
+			
+			@media only screen and (min-width: 1440px) {
+				.list ul {
+					display: inline-block;
+					margin: 0 auto;
+					width: auto;
+					margin-left: 0.15rem;
+				}
+				.list ul li {
+					width: 1.94rem;
+					height: 0.6rem;
+					border: 0.02rem solid #878787;
+					border-radius: 0.04rem;
+					text-align: center;
+					vertical-align: middle;
+					line-height: 0.6rem;
+					float: left;
+					margin-right: 0.15rem;
+					margin-bottom: 0.15rem;
+					font-size: 0.28rem;
+					cursor: pointer;
+				}
+			}
+		</style>
+	</head>
+
+	<body class="body">
+		<div id="appform" v-cloak="">
+			<header class="head">
+				<input type="button" class="button" value="返回" tabindex="1" @click="goBack" />
+			</header>
+			<div style="height: 1rem;"></div>
+			<div class="player">
+				<video id="myvideo" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" data-setup="{}">
+					<source src="res/loading.mp4">
+				</video>
+			</div>
+			<div style="height: 0.2rem;"></div>
+			<div class="list">
+				<ul>
+					<template v-for="(item,index) in searchList">
+						<li :key="index" :tabindex="index+2" @click="postSearchPage(item.href)">{{item.title}}</li>
+					</template>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</body>
+	<script src="js/vue.min.js"></script>
+	<script src="js/vue-resource.min.js"></script>
+	<script src="js/video.min.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#appform',
+			data: {
+				//baseUrl: "http://192.168.1.102/",
+				baseUrl: "https://api.dahuotu.com/",
+				searchList: [],
+			},
+			methods: {
+				getUrlParam: function(variable) {
+					var query = window.location.search.substring(1);
+					var vars = query.split("&");
+					for(var i = 0; i < vars.length; i++) {
+						var pair = vars[i].split("=");
+						if(pair[0] == variable) {
+							return pair[1];
+						}
+					}
+					return(false);
+				},
+				goBack: function() {
+					history.back();
+				},
+				postSearchList: function(hf) {
+					//搜索集数
+					this.$http.get(app.baseUrl + "api.aspx?act=dianying_list&val=" + hf).then(function(res) {
+						//console.log(res.body.data);
+						app.searchList = res.body.data;
+					}, function() {
+						//console.log('请求失败处理');
+					});
+				},
+				postSearchPage: function(hf) {
+					//播放
+					var myPlayer = videojs('myvideo');
+					videojs("myvideo").ready(function() {
+						var myPlayer = this;
+						myPlayer.src(hf);
+						myPlayer.play();
+					});
+				}
+			}
+		});
+
+		window.onload = function() {
+			var para = app.getUrlParam("hf");
+			app.postSearchList(para);
+		};
+	</script>
+
+</html>
