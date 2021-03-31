@@ -85,12 +85,6 @@
 				font-size: 0.24rem;
 				color: #666;
 				line-height: 0.42rem;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				-o-text-overflow: ellipsis;
-				-moz-text-overflow: ellipsis;
-				-webkit-text-overflow: ellipsis;
 			}
 			
 			#con p a {
@@ -117,17 +111,10 @@
 				padding: 0.15rem;
 				margin: 0.1rem;
 				display: inline-block;
-			}
-			
-			#con .pic .img {
-				height: 2.2rem;
-				background: #fff;
-				overflow: hidden;
-			}
-			
-			#con .pic p {
 				font-size: 0.28rem;
-				margin-top: 0.2rem;
+				width: 25%;
+				height: 1.6rem;
+				vertical-align: middle;
 			}
 			
 			@media only screen and (min-width: 1024px) {
@@ -138,15 +125,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 1.8rem;
-					overflow: hidden;
-					background: #fff;
-				}
-				#con .pic p {
 					font-size: 0.28rem;
-					margin-top: 0.1rem;
 				}
 			}
 			
@@ -158,15 +137,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 1.8rem;
-					overflow: hidden;
-					background: #fff;
-				}
-				#con .pic p {
 					font-size: 0.28rem;
-					margin-top: 0.1rem;
 				}
 			}
 			
@@ -178,15 +149,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 2.2rem;
-					overflow: hidden;
-					background: #fff;
-				}
-				#con .pic p {
 					font-size: 0.28rem;
-					margin-top: 0.1rem;
 				}
 			}
 			
@@ -198,15 +161,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 3rem;
-					background: #fff;
-					overflow: hidden;
-				}
-				#con .pic p {
 					font-size: 0.16rem;
-					margin-top: 0.1rem;
 				}
 			}
 			
@@ -218,15 +173,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 3.6rem;
-					overflow: hidden;
-					background: #fff;
-				}
-				#con .pic p {
 					font-size: 0.18rem;
-					margin-top: 0.1rem;
 				}
 			}
 			
@@ -238,15 +185,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 3rem;
-					overflow: hidden;
-					background: #fff;
-				}
-				#con .pic p {
 					font-size: 0.18rem;
-					margin-top: 0.1rem;
 				}
 			}
 			
@@ -258,15 +197,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 3.3rem;
-					overflow: hidden;
-					background: #fff;
-				}
-				#con .pic p {
 					font-size: 0.24rem;
-					margin-top: 0.1rem;
 				}
 			}
 			
@@ -278,15 +209,7 @@
 					padding: 0.15rem;
 					margin: 0.1rem;
 					display: inline-block;
-				}
-				#con .pic .img {
-					height: 3.3rem;
-					overflow: hidden;
-					background: #fff;
-				}
-				#con .pic p {
 					font-size: 0.28rem;
-					margin-top: 0.1rem;
 				}
 			}
 		</style>
@@ -306,13 +229,12 @@
 					<span>尚未搜索到您需要的影视资源</span>
 				</div>
 				<template v-for="(item,index) in searchList">
-					<div :key="index" :tabindex="index+3" class="pic" @click="postSearchList(index,item.href)">
-						<div class="img">
-							<img class="img-responsive" :src="item.src" />
-						</div>
-						<p v-html="item.title"></p>
+					<div :key="index" :tabindex="index+3" class="pic" @click="postSearchList(index,item.href)" v-html="item.title">
 					</div>
 				</template>
+			</div>
+			<div class="ms">
+				<div class="qr"></div>
 			</div>
 		</div>
 		</div>
@@ -323,8 +245,8 @@
 		var app = new Vue({
 			el: '#appform',
 			data: {
-				//baseUrl: "http://192.168.1.102/",
-				baseUrl: "https://api.dahuotu.com/",
+				baseUrl: "http://192.168.1.102/",
+				//baseUrl: "https://api.dahuotu.com/",
 				searchVal: "",
 				searchState: "no hide",
 				searchList: [],
@@ -338,6 +260,7 @@
 							if(res.body.data.length > 0) {
 								app.searchList = res.body.data;
 								app.searchState = "no hide";
+								window.localStorage.setItem("searchKey", app.searchVal);
 							} else {
 								app.searchState = "no";
 							}
@@ -354,6 +277,12 @@
 				},
 			}
 		});
+		window.onload = function() {
+			var keys = window.localStorage.getItem("searchKey");
+			if(keys != "") {
+				app.searchVal = keys;
+			}
+		}
 	</script>
 
 </html>

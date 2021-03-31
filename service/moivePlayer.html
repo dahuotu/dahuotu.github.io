@@ -62,7 +62,7 @@
 			}
 			
 			.list ul li {
-				width: 2rem;
+				width: auto;
 				height: 0.6rem;
 				border: 0.02rem solid #878787;
 				border-radius: 0.04rem;
@@ -74,6 +74,7 @@
 				margin-bottom: 0.15rem;
 				font-size: 0.28rem;
 				cursor: pointer;
+				padding: 0 0.2rem;
 			}
 			
 			.list ul li:focus {
@@ -108,7 +109,7 @@
 					margin-left: 0.12rem;
 				}
 				.list ul li {
-					width: 1.58rem;
+					width: auto;
 					height: 0.6rem;
 					border: 0.02rem solid #878787;
 					border-radius: 0.04rem;
@@ -120,6 +121,7 @@
 					margin-bottom: 0.15rem;
 					font-size: 0.28rem;
 					cursor: pointer;
+					padding: 0 0.2rem;
 				}
 			}
 			
@@ -131,7 +133,7 @@
 					margin-left: 0.12rem;
 				}
 				.list ul li {
-					width: 2.26rem;
+					width: auto;
 					height: 0.6rem;
 					border: 0.02rem solid #878787;
 					border-radius: 0.04rem;
@@ -143,6 +145,7 @@
 					margin-bottom: 0.15rem;
 					font-size: 0.28rem;
 					cursor: pointer;
+					padding: 0 0.2rem;
 				}
 			}
 			
@@ -154,7 +157,7 @@
 					margin-left: 0.15rem;
 				}
 				.list ul li {
-					width: 1.1rem;
+					width: auto;
 					height: 0.6rem;
 					border: 0.02rem solid #878787;
 					border-radius: 0.04rem;
@@ -166,6 +169,7 @@
 					margin-bottom: 0.15rem;
 					font-size: 0.28rem;
 					cursor: pointer;
+					padding: 0 0.2rem;
 				}
 			}
 			
@@ -177,7 +181,7 @@
 					margin-left: 0.15rem;
 				}
 				.list ul li {
-					width: 1.7rem;
+					width: auto;
 					height: 0.6rem;
 					border: 0.02rem solid #878787;
 					border-radius: 0.04rem;
@@ -189,6 +193,7 @@
 					margin-bottom: 0.15rem;
 					font-size: 0.28rem;
 					cursor: pointer;
+					padding: 0 0.2rem;
 				}
 			}
 			
@@ -200,7 +205,7 @@
 					margin-left: 0.15rem;
 				}
 				.list ul li {
-					width: 1.8rem;
+					width: auto;
 					height: 0.6rem;
 					border: 0.02rem solid #878787;
 					border-radius: 0.04rem;
@@ -212,6 +217,7 @@
 					margin-bottom: 0.15rem;
 					font-size: 0.28rem;
 					cursor: pointer;
+					padding: 0 0.2rem;
 				}
 			}
 			
@@ -223,7 +229,7 @@
 					margin-left: 0.15rem;
 				}
 				.list ul li {
-					width: 1.94rem;
+					width: auto;
 					height: 0.6rem;
 					border: 0.02rem solid #878787;
 					border-radius: 0.04rem;
@@ -235,6 +241,7 @@
 					margin-bottom: 0.15rem;
 					font-size: 0.28rem;
 					cursor: pointer;
+					padding: 0 0.2rem;
 				}
 			}
 		</style>
@@ -246,18 +253,18 @@
 				<input type="button" class="button" value="返回" tabindex="1" @click="goBack" />
 			</header>
 			<div style="height: 1rem;"></div>
-			<div class="player">
-				<video id="myvideo" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" data-setup="{}">
-					<source src="res/loading.mp4">
-				</video>
-			</div>
-			<div style="height: 0.2rem;"></div>
 			<div class="list">
 				<ul>
 					<template v-for="(item,index) in searchList">
 						<li :key="index" :tabindex="index+2" @click="postSearchPage(item.href)">{{item.title}}</li>
 					</template>
 				</ul>
+			</div>
+			<div style="height: 0.2rem;"></div>
+			<div class="player">
+				<video id="myvideo" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" data-setup="{}">
+					<source src="res/loading.mp4">
+				</video>
 			</div>
 		</div>
 		</div>
