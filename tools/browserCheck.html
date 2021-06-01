@@ -28,16 +28,20 @@
 	<body>
 		<div class="pg">
 			<div class="hd">
-				<div class="tbox">
-					<table class="tableBlue">
-						<tr>
-							<th colspan="2">源码</th>
-						</tr>
-						<tr>
-							<td>不开源</td>
-							<td class="rd">不开源</td>
-						</tr>
-					</table>
+				<div class="tbox" id="appform" v-cloak="">
+					<template v-for="(item,index) in tableList">
+						<table :key="index" class="tableBlue">
+							<tr>
+								<th colspan="2">{{item.title}}({{item.desc}})</th>
+							</tr>
+							<template v-for="key in item.data">
+								<tr>
+									<td>{{key.name}}</td>
+									<td>{{key.value}}</td>
+								</tr>
+							</template>
+						</table>
+					</template>
 				</div>
 			</div>
 			<div class="cd">
@@ -49,7 +53,8 @@
 					<div class="title">更新日志</div>
 					<div class="desc">
 						<ul class="log">
-							<li>...</li>
+							<li>2021-05-31 新增UserAgent指纹</li>
+							<li>2021-06-01 新增系统电池指纹</li>
 						</ul>
 					</div>
 					<div class="title">代码开源</div>
@@ -110,5 +115,111 @@
 	</body>
 	<script type="text/javascript" src="../js/vue.min.js"></script>
 	<script type="text/javascript" src="../js/app.js"></script>
+	<script type="text/javascript" src="../js/browser.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#appform',
+			data: {
+				tableList: [{
+					title: 'User Agent',
+					desc: '浏览器用户代理信息',
+					data: [],
+				}, {
+					title: 'System Battery',
+					desc: '系统电池信息',
+					data: [],
+				}],
+			},
+			methods: {
+				init: function() {
+					//加载UA信息
+					app.loadUserAgent();
+					//加载电池信息
+					app.loadSystemBattery();
+				},
+				loadUserAgent: function() {
+					dahuotuUa.init();
+					app.tableList[0].data = [{
+							name: '浏览器的userAgent信息',
+							value: dahuotuUa.uaInfo,
+						},
+						{
+							name: '浏览器名称',
+							value: dahuotuUa.appName,
+						}, {
+							name: '浏览器的内部名称',
+							value: dahuotuUa.appCode,
+						}, {
+							name: '浏览器版本号',
+							value: dahuotuUa.appVersion,
+						}, {
+							name: '浏览器版本系统类型',
+							value: dahuotuUa.appPlatform,
+						}, {
+							name: '浏览器的产品名称',
+							value: dahuotuUa.appProductName,
+						}, {
+							name: '浏览器的语言',
+							value: dahuotuUa.appLanguage,
+						},
+						{
+							name: '是否为IE内核',
+							value: dahuotuUa.isIE,
+						}, {
+							name: '是否为Opera内核',
+							value: dahuotuUa.isOpera,
+						}, {
+							name: '是否为苹果、谷歌内核',
+							value: dahuotuUa.isWebKit,
+						}, {
+							name: '是否为火狐内核',
+							value: dahuotuUa.isFirefox,
+						}, {
+							name: '是否为移动终端',
+							value: dahuotuUa.isMobile,
+						}, {
+							name: '是否为ios终端',
+							value: dahuotuUa.isIos,
+						}, {
+							name: '是否为Android终端或UC浏览器',
+							value: dahuotuUa.isAndroid,
+						}, {
+							name: '是否为iPhone或者QQHD浏览器',
+							value: dahuotuUa.isIPhone,
+						}, {
+							name: '是否为iPad',
+							value: dahuotuUa.isIPad,
+						}, {
+							name: '是否为Web应该程序，没有头部与底部',
+							value: dahuotuUa.isWebApp,
+						}, {
+							name: '是否支持webVR技术',
+							value: dahuotuUa.isWebVR,
+						}
+					];
+				},
+				loadSystemBattery: function() {
+					navigator.getBattery().then(function(battery) {
+						app.tableList[1].data = [{
+							name: '是否在充电',
+							value: battery.charging,
+						}, {
+							name: '当前电量百分比',
+							value: battery.level * 100 + '%',
+						}, {
+							name: '还有多久充满',
+							value: battery.charging == true && battery.chargingTime != 'Infinity' ? (battery.chargingTime / 60 / 60).toFixed(2) + 'H' : '-',
+						}, {
+							name: '还可以用多久',
+							value: battery.charging == false && battery.dischargingTime != 'Infinity' ? (battery.dischargingTime / 60 / 60).toFixed(2) + 'H' : '-',
+						}];
+					});
+				},
+			}
+		});
+		window.onload = function() {
+			app.init();
+		};
+	</script>
 
 </html>
