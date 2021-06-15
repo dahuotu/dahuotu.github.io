@@ -51,6 +51,8 @@ a {
 	border-collapse: separate;
 	border-spacing: 0;
 	border: 1px solid #ddd;
+	font-size: 12px;
+	margin-bottom: 20px;
 }
 
 .tableBlue th {

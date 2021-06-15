@@ -30,12 +30,13 @@
 					<template v-for="(item,index) in tableList">
 						<table :key="index" class="tableBlue">
 							<tr>
-								<th colspan="2">{{item.title}}({{item.desc}})</th>
+								<th colspan="3">{{item.title}}({{item.desc}})</th>
 							</tr>
 							<template v-for="key in item.data">
 								<tr>
-									<td>{{key.name}}</td>
-									<td>{{key.value}}</td>
+									<td width="300">{{key.name}}</td>
+									<td width="300">{{key.code}}</td>
+									<td width="*">{{key.value}}</td>
 								</tr>
 							</template>
 						</table>
@@ -113,92 +114,32 @@
 	</body>
 	<script type="text/javascript" src="../js/vue.min.js"></script>
 	<script type="text/javascript" src="../js/app.js"></script>
-	<script type="text/javascript" src="../js/browser.js"></script>
-	<!--<script type="text/javascript" src="../js/pintuer.tools.js" ></script>-->
+	<script type="text/javascript" src="js/userAgent.js"></script>
+	<script type="text/javascript" src="js/deviceOS.js"></script>
+	<script type="text/javascript" src="js/dahuotu.js"></script>
 	<script>
-		//		window.pintuer.default.test.hello();
-		//		console.log(window.pintuer.default.test.ok());
-
 		var app = new Vue({
 			el: '#appform',
 			data: {
 				tableList: [{
-					title: 'User Agent',
-					desc: '浏览器用户代理信息',
-					data: [],
-				}, {
-					title: 'System Battery',
-					desc: '系统电池信息',
-					data: [],
-				}],
+						title: uA.Code,
+						desc: uA.Desc,
+						data: uA.List,
+					},
+					{
+						title: devOS.Code,
+						desc: devOS.Desc,
+						data: devOS.List,
+					}
+				],
 			},
 			methods: {
 				init: function() {
-					//加载UA信息
-					app.loadUserAgent();
 					//加载电池信息
-					app.loadSystemBattery();
+					//app.loadSystemBattery();
 				},
 				loadUserAgent: function() {
 					dahuotuUa.init();
-					app.tableList[0].data = [{
-							name: '浏览器的userAgent信息',
-							value: dahuotuUa.uaInfo,
-						},
-						{
-							name: '浏览器名称',
-							value: dahuotuUa.appName,
-						}, {
-							name: '浏览器的内部名称',
-							value: dahuotuUa.appCode,
-						}, {
-							name: '浏览器版本号',
-							value: dahuotuUa.appVersion,
-						}, {
-							name: '浏览器版本系统类型',
-							value: dahuotuUa.appPlatform,
-						}, {
-							name: '浏览器的产品名称',
-							value: dahuotuUa.appProductName,
-						}, {
-							name: '浏览器的语言',
-							value: dahuotuUa.appLanguage,
-						},
-						{
-							name: '是否为IE内核',
-							value: dahuotuUa.isIE,
-						}, {
-							name: '是否为Opera内核',
-							value: dahuotuUa.isOpera,
-						}, {
-							name: '是否为苹果、谷歌内核',
-							value: dahuotuUa.isWebKit,
-						}, {
-							name: '是否为火狐内核',
-							value: dahuotuUa.isFirefox,
-						}, {
-							name: '是否为移动终端',
-							value: dahuotuUa.isMobile,
-						}, {
-							name: '是否为ios终端',
-							value: dahuotuUa.isIos,
-						}, {
-							name: '是否为Android终端或UC浏览器',
-							value: dahuotuUa.isAndroid,
-						}, {
-							name: '是否为iPhone或者QQHD浏览器',
-							value: dahuotuUa.isIPhone,
-						}, {
-							name: '是否为iPad',
-							value: dahuotuUa.isIPad,
-						}, {
-							name: '是否为Web应该程序，没有头部与底部',
-							value: dahuotuUa.isWebApp,
-						}, {
-							name: '是否支持webVR技术',
-							value: dahuotuUa.isWebVR,
-						}
-					];
 				},
 				loadSystemBattery: function() {
 					navigator.getBattery().then(function(battery) {
