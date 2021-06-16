@@ -52,8 +52,13 @@
 					<div class="title">更新日志</div>
 					<div class="desc">
 						<ul class="log">
+							<li>2021-06-16 重构版本库新增多项指纹</li>
+							<li>2021-06-12 设备系统相关、语言相关、时区相关、屏幕相关</li>
+							<li>2021-06-07 浏览器相关、浏览器插件相关、浏览器MIME类型</li>
+							<li>2021-06-03 存储相关、媒体相关、网络连接相关</li>
+							<li>2021-06-01 地理位置相关、IP相关、字体相关</li>
 							<li>2021-05-31 新增UserAgent指纹</li>
-							<li>2021-06-01 新增系统电池指纹</li>
+							<li>2021年...</li>
 						</ul>
 					</div>
 					<div class="title">代码开源</div>
@@ -114,23 +119,73 @@
 	</body>
 	<script type="text/javascript" src="../js/vue.min.js"></script>
 	<script type="text/javascript" src="../js/app.js"></script>
-	<script type="text/javascript" src="js/userAgent.js"></script>
-	<script type="text/javascript" src="js/deviceOS.js"></script>
-	<script type="text/javascript" src="js/dahuotu.js"></script>
+	<script type="text/javascript" src="js/pintuer.devTools.js"></script>
+	<script type="text/javascript" src="js/browserJson.js"></script>
 	<script>
 		var app = new Vue({
 			el: '#appform',
 			data: {
 				tableList: [{
-						title: uA.Code,
-						desc: uA.Desc,
-						data: uA.List,
+						title: DeviceOS.Code,
+						desc: DeviceOS.Desc,
+						data: DeviceOS.List,
 					},
 					{
-						title: devOS.Code,
-						desc: devOS.Desc,
-						data: devOS.List,
-					}
+						title: Browser.Code,
+						desc: Browser.Desc,
+						data: Browser.List,
+					},
+					{
+						title: Storage.Code,
+						desc: Storage.Desc,
+						data: Storage.List,
+					},
+					{
+						title: MimeTypes.Code,
+						desc: MimeTypes.Desc,
+						data: MimeTypes.List,
+					},
+					{
+						title: Font.Code,
+						desc: Font.Desc,
+						data: Font.List,
+					},
+					{
+						title: Plugins.Code,
+						desc: Plugins.Desc,
+						data: Plugins.List,
+					},
+					{
+						title: Language.Code,
+						desc: Language.Desc,
+						data: Language.List,
+					},
+					{
+						title: Timezone.Code,
+						desc: Timezone.Desc,
+						data: Timezone.List,
+					},
+					{
+						title: Media.Code,
+						desc: Media.Desc,
+						data: Media.List,
+					},
+					{
+						title: Screen.Code,
+						desc: Screen.Desc,
+						data: Screen.List,
+					},
+					{
+						title: Network.Code,
+						desc: Network.Desc,
+						data: Network.List,
+					},
+					{
+						title: Geolocation.Code,
+						desc: Geolocation.Desc,
+						data: Geolocation.List,
+					},
+
 				],
 			},
 			methods: {
