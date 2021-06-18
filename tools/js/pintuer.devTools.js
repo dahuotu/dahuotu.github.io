@@ -174,6 +174,10 @@ var pintuer = {
 		Remark: '字体相关',
 		//字体列表
 		List: [],
+		//字体指纹
+		Fingerprint: function() {
+			return pintuer.GUID();
+		},
 	},
 	//浏览器插件相关
 	Plugins: {
@@ -260,4 +264,26 @@ var pintuer = {
 		//对象
 		Obj: navigator.geolocation || null,
 	},
+	//全球唯一标识GUID
+	GUID: function() {
+		return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+			var r = Math.random() * 16 | 0,
+				v = c == 'x' ? r : (r & 0x3 | 0x8);
+			return v.toString(16);
+		});
+	},
+	//指纹信息
+	Fingerprint: {
+		GetHashId: function() {
+
+		},
+		//字体指纹
+		Font: {},
+		//画布指纹
+		Canvas: {},
+		//音频内容指纹
+		AudioContext: {},
+		//WebGL指纹
+		WebGL: {},
+	}
 }

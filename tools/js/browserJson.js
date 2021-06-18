@@ -2,6 +2,16 @@ var DeviceOS = {
 	Code: "DeviceOS",
 	Desc: pintuer.DeviceOS.Remark,
 	List: [{
+			name: '全球唯一标识GUID',
+			code: 'GUID',
+			value: pintuer.GUID(),
+		},
+		{
+			name: '浏览器唯一指纹',
+			code: 'Fingerprint',
+			value: pintuer.Fingerprint.GetHashId(),
+		},
+		{
 			name: '操作系统类型',
 			code: 'OsCPU',
 			value: pintuer.DeviceOS.OsCPU,
@@ -236,10 +246,16 @@ var Font = {
 	Code: "Font",
 	Desc: pintuer.Font.Remark,
 	List: [{
-		name: '字体列表',
-		code: 'List',
-		value: pintuer.Font.List,
-	}]
+			name: '字体列表',
+			code: 'List',
+			value: pintuer.Font.List,
+		},
+		{
+			name: '字体指纹',
+			code: 'Fingerprint',
+			value: pintuer.Font.Fingerprint(),
+		},
+	]
 };
 
 var Plugins = {
