@@ -23,6 +23,18 @@ function siteTime() {
 	var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
 	document.getElementById("sitetime").innerHTML = "本站已运行" + diffYears + "年" + diffDays + "天" + diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒";
 }
+
+function getScreen() {
+	if(window.screen.availWidth <= 980) {
+		document.writeln('我很懒，懒得做移动端...')
+	} else {
+		siteTime();
+	}
+}
+
 window.onload = function() {
-	siteTime();
+	getScreen();
+}
+window.onresize = function(){
+	getScreen();
 }
