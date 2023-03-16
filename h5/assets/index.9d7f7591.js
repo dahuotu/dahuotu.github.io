@@ -1,0 +1,1 @@
+import{aE as a}from"./index.94028eaa.js";const t=(t={})=>a({url:"/injection/task/ll/listByPage",method:"GET",params:t}),s=(t={})=>a({url:"/injection/task/ll/detail",method:"GET",params:t}),i=(t={})=>a({url:"/injection/task/ll/audit",method:"POST",data:t}),l=(t={})=>a({url:"/injection/task/ll/statistics",method:"GET",params:t});export{i as A,t as G,l as a,s as b};

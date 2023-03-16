@@ -1,0 +1,131 @@
+.color-blue {
+  color: #3a78f4 !important;
+}
+.color-gray {
+  color: #848484 !important;
+}
+.color-red {
+  color: #FF3333 !important;
+}
+.color-black {
+  color: #1c1c1c !important;
+}
+.color-green{
+  color: #0DC18E !important;
+}
+.bg-white {
+  background: #ffffff;
+}
+.bg-blue {
+  background: #3a78f4 !important;
+}
+.btn-primary {
+  background: #3a78f4;
+  color: #fff;
+}
+.btn-primary:active {
+  opacity: 0.8;
+}
+.border-top{
+  border-top: 1rpx solid #efefef;
+}
+
+/* 超过一行省略号 */
+.text-one-line {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* 超过两行省略号 */
+.text-two-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.btn-primary {
+  background: #3a78f4;
+  color: #fff;
+  font-size: 36rpx;
+}
+.btn-border-gray {
+  border: 1rpx solid #BFBFBF;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #1C1C1C;
+  background: #fff;
+
+}
+.btn-border-blue {
+  border: 1rpx solid #3A78F4;
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #3A78F4;
+  background: #fff;
+}
+.btn-primary.circular{
+  background: linear-gradient(166deg, #3A78F4 0%, #76A4FF 100%, rgba(58,120,244,0) 100%);
+  box-shadow: 0rpx 4rpx 16rpx 1rpx rgba(58,120,244,0.4000);
+  border-radius: 50rpx;
+}
+.footer-btn {
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}
+/* 按钮（白-灰） */
+.btn-default {
+  background: #fff !important;
+  border-radius: 0 !important;
+  font-size: 28rpx !important;
+  color: #1c1c1c !important;
+  padding: 15rpx;
+}
+.btn-default::after {
+  display: none !important;
+}
+.btn-default:active {
+  color: rgba(0, 0, 0, 0.6) !important;
+  background: #dedede !important;
+}
+
+/* 重置表单样式*/
+.uni-forms-reset .uni-forms-item {
+  margin-bottom: 0 !important;
+  margin: 0 40rpx !important;
+  padding: 20rpx 0 !important;
+  border-bottom: 1rpx solid #f6f6f6 !important;
+}
+.uni-forms-reset .uni-forms-item__label {
+  font-size: 28rpx !important;
+  color: #1c1c1c !important;
+}
+
+.uni-forms-reset .uni-date .uni-date-x--border{
+  border: none;
+}
+
+.uni-forms-reset .uni-easyinput__content {
+  border: none !important;
+}
+
+.uni-forms-reset .uni-forms-item__error {
+  top: 70%;
+  padding-left: 20rpx;
+} 
+
+.uni-forms-reset .icon-add{
+  width: 50rpx;
+  height: 5rpx;
+}
+
+.uni-forms-reset .icon-del-box {
+  width: 26rpx;
+  height: 26rpx;
+  top: 3rpx;
+  right: 3rpx;
+}
+.uni-forms-reset .icon-del {
+  width: 15rpx;
+  height: 2rpx;
+}
